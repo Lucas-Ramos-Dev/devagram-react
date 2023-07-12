@@ -1,21 +1,45 @@
-@import 'variaveis.scss';
+@import "variaveis.scss";
 
-*{
-  font-family: 'Biennale Regular';
-  font-size: 14px;
+* {
+    font-family: "Biennale Regular";
+    font-size: 14px;
 }
 
-.avatar{
-  border-radius: 50%;
-  object-fit: cover;
+html,
+body,
+#__next {
+    height: 100%;
+    margin: 0;
 }
 
-.oculto{
-  display: none
+.avatar {
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-@import '../public/fonts/fonts.scss';
-@import '../componentes/botao/botao.scss';
+.oculto {
+    display: none;
+}
 
+input {
+    /*chrome, opera, safari e firefox*/
+    &::placeholder {
+        color: $cinza2;
+        opacity: 1;
+    }
 
+    &:-ms-input-placeholder {
+        /*internet explorer 10/11*/
+        color: $cinza2;
+    }
 
+    &::-ms-input-placeholder {
+        /*microsoft edge*/
+        color: $cinza2;
+    }
+}
+
+@import "../public/fonts/fonts.scss";
+@import "../componentes/botao/botao.scss";
+@import "./paginaPublica.scss";
+@import "../componentes/inputPublico/inputPublico.scss";
