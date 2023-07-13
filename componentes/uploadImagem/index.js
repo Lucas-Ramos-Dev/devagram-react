@@ -7,7 +7,7 @@ export default function UploadImagem({
     setImagem,
     imagemPreview,
     imagemPreviewClassName='null',
-    aoSetarAReferencia='null'
+    aoSetarAReferencia
 }){
     const referenciaInput = useRef(null);
 

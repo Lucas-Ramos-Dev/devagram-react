@@ -4,6 +4,7 @@ import Botao from "@/componentes/botao";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { validarEmail, validarSenha } from '../util/validadores'
 
 import imagemEnvelope from '@/public/imagens/envelope.svg';
 import imagemChave from '@/public/imagens/chave.svg'
@@ -34,6 +35,8 @@ export default function Login(){
                         tipo="email"
                         aoAlterarValor={e => setEmail(e.target.value)}
                         valor={email}
+                        mensagemValidacao="Endereco informado e invalido!"
+                        exibirMensagemValidacao={email && !validarEmail(email)}
                     />
 
                     <InputPublico
@@ -42,6 +45,8 @@ export default function Login(){
                         tipo="password"
                         aoAlterarValor={e => setSenha(e.target.value)}
                         valor={senha}
+                        mensagemValidacao="Precisa ter pelo menos 3 caracteres!"
+                        exibirMensagemValidacao={senha && !validarSenha(senha)}
                     />
 
                     <Botao 
