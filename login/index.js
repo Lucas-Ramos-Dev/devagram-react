@@ -15,6 +15,14 @@ export default function Login(){
 
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+
+    //funcao para habilitar/desabilitar o botao atraves de validacoes do formulario
+    const validarFormulario = () => {
+        return (
+            validarEmail(email)
+            && validarSenha(senha)
+        );
+    }
     
     return(
         <section className={"paginaLogin paginaPublica"}>
@@ -52,7 +60,7 @@ export default function Login(){
                     <Botao 
                         texto={"Login"}
                         tipo="submit"
-                        desabilitado={false}
+                        desabilitado={!validarFormulario()}
                     />
                 </form>
 
